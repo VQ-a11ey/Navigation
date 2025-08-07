@@ -12,14 +12,24 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 Text("This is the root view 🎶")
-                NavigationLink(destination: Text("This is the Second View!")) {
-                    Text("Click Me!")
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                NavigationLink(destination: SecondView()) {
+                        Text("Second Page")
+                            .padding(.top)
                 }
-                
-                
+                NavigationLink(destination: Text("This is the Third View!")
+                    .font(.title)) {
+                        Text("Third Page")
+                            .padding()
+                }
+                Spacer()
                 
           
             }//vstack
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
             
         } //Navigation
         
